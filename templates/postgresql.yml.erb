@@ -161,6 +161,24 @@ watchdog:
   mode: <%= @watchdog_mode %>
   device: <%= @watchdog_device %>
   safety_margin: <%= @watchdog_safety_margin %>
+
+tags:
+<% if @tag_nofailover != nil -%>
+  nofailover: <%= @tag_nofailover %>
+<% end -%>
+<% if @tag_clonefrom != nil -%>
+  clonefrom: <%= @tag_clonefrom %>
+<% end -%>
+<% if @tag_noloadbalance != nil -%>
+  nodloadbalance: <%= @tag_noloadbalance %>
+<% end -%>
+<% if @tag_replicatefrom != nil -%>
+  replicatefrom: <%= @tag_replicatefrom %>
+<% end -%>
+<% if @tag_nosync != nil -%>
+  nosync: <%= @tag_nosync %>
+<% end -%>
+
 <% if @use_etcd -%>
 
 etcd:

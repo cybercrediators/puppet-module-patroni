@@ -198,6 +198,16 @@
 #   Refer to Watchdog configuration `device` setting
 # @param watchdog_safety_margin
 #   Refer to Watchdog configuration `safety_margin` setting
+# @param tag_nofailover
+#   Refer to Tag configuration `nofailover` setting
+# @param tag_clonefrom
+#   Refer to Tag configuration `clonefrom` setting
+# @param tag_noloadbalance
+#   Refer to Tag configuration `noloadbalance` setting
+# @param tag_replicatefrom
+#   Refer to Tag configuration `replicatefrom` setting
+# @param tag_nosync
+#   Refer to Tag configuration `nosync` setting
 # @param manage_postgresql
 #   Boolean to determine if postgresql is managed
 # @param postgresql_version
@@ -358,6 +368,13 @@ class patroni (
   Enum['off','automatic','required'] $watchdog_mode = 'automatic',
   String $watchdog_device = '/dev/watchdog',
   Integer $watchdog_safety_margin = 5,
+
+  # Tag Settings
+  Optional[Boolean] $tag_nofailover = false,
+  Optional[Boolean] $tag_clonefrom = false,
+  Optional[Boolean] $tag_noloadbalance = false,
+  Optional[String]  $tag_replicatefrom = undef,
+  Optional[Boolean] $tag_nosync = false,
 
   # Module Specific Settings
   Boolean $manage_postgresql = true,
